@@ -1,0 +1,31 @@
+{
+  "author": "equito",
+  "bugs": {
+    "url": "https://github.com/caaat1/equito-lib/issues"
+  },
+  "description": "A library of helper constants and classes",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "homepage": "https://github.com/caaat1/equito-lib#readme",
+  "keywords": [
+    "helper",
+    "lib",
+    "library"
+  ],
+  "license": "ISC",
+  "main": "out/index.js",
+  "name": "equito-lib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caaat1/equito-lib.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "version": "1.0.0",
+  "dependencies": {
+    "source-map-support": "^0.5.21"
+  }
+}
