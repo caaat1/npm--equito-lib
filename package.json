@@ -46,6 +46,7 @@
     "url": "git+https://github.com/caaat1/equito-lib.git"
   },
   "scripts": {
+    "lint": "eslint . --fix",
     "build": "tsc",
     "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 0"
