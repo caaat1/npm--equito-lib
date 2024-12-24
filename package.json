@@ -3,10 +3,22 @@
   "bugs": {
     "url": "https://github.com/caaat1/equito-lib/issues"
   },
+  "dependencies": {
+    "source-map-support": "latest"
+  },
   "description": "A library of helper constants and classes",
   "devDependencies": {
-    "typescript": "^5.7.2"
+    "@eslint/create-config": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest",
+    "prettier": "^3.4.2",
+    "prettier-plugin-organize-imports": "latest",
+    "typescript": "latest"
   },
+  "files": [
+    "out"
+  ],
   "homepage": "https://github.com/caaat1/equito-lib#readme",
   "keywords": [
     "helper",
@@ -15,17 +27,15 @@
   ],
   "license": "ISC",
   "main": "out/index.js",
-  "name": "equito-lib",
+  "name": "equito-library",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caaat1/equito-lib.git"
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "vscode-test"
   },
-  "version": "1.0.0",
-  "dependencies": {
-    "source-map-support": "^0.5.21"
-  }
+  "types": "out/index.d.ts",
+  "version": "0.0.1-beta.5"
 }

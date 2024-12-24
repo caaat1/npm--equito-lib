@@ -49,7 +49,6 @@ class LocalNews extends globalThis.Error {
             args.length === 0
                 ? Parent_1.default.getCompositeConstructorName(this)
                 : ConstStr.EMPTY;
-        console.log('LocalNews', this.stack);
     }
     print(...args) {
         new Console.GroupCollapsed(this.toString()).log(() => {
