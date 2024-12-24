@@ -9,23 +9,36 @@
   "description": "A library of helper constants and classes",
   "devDependencies": {
     "@eslint/create-config": "latest",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
-    "eslint": "latest",
+    "@eslint/js": "^9.17.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "eslint": "^9.17.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
     "prettier": "^3.4.2",
-    "prettier-plugin-organize-imports": "latest",
+    "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "latest"
   },
   "files": [
     "out"
   ],
   "homepage": "https://github.com/caaat1/equito-lib#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "keywords": [
     "helper",
     "lib",
     "library"
   ],
   "license": "ISC",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
   "main": "out/index.js",
   "name": "equito-library",
   "repository": {
@@ -34,6 +47,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "prepare": "husky",
     "test": "vscode-test"
   },
   "types": "out/index.d.ts",

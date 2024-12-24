@@ -1,1 +1,0 @@
-import * as Str from '..';

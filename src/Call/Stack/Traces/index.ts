@@ -3,6 +3,7 @@ import * as Str from '../../../Const/String';
 import * as Trace from '../../Trace';
 import Defined from '../Defined';
 import * as Error from './Error';
+
 export default class Traces extends globalThis.Array<string> {
     public constructor(stackTrace: Defined) {
         super(...stackTrace.split(Str.NEW_LINE));

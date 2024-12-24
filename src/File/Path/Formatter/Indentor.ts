@@ -1,5 +1,6 @@
 import PathFormatter from '.';
 import * as Str from '../../../Const/String';
+
 export default class Indentor extends PathFormatter {
     public constructor(
         private char: string = Str.SPACE,

@@ -1,65 +1,54 @@
-// const config = {
-//     env: {
-//         es6: true,
-//         node: true,
-//     },
-//     extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-//     parser: "@typescript-eslint/parser",
-//     parserOptions: {
-//         ecmaVersion: 2018,
-//         sourceType: "module",
-//     },
-//     plugins: ["@typescript-eslint"],
-//     rules: {
-//         "newline-after-import": ["error", { count: 1 }],
-//     },
-// };
+import js from '@eslint/js';
+import tsEslintPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import globals from 'globals';
 
-// export default config;
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-
-export default [{
-    // Specify the files this configuration applies to
-    files: ["**/*.ts"],
-    // Environment settings
-    env: {
-        browser: true,
-        es2021: true,
-    },
-    // Extended configurations
-    extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-    ],
-    // Plugins
-    plugins: {
-        "@typescript-eslint": typescriptEslint,
-    },
-    // Parser options
+// Update type to the new standard type (replace `ESLintConfig` with the correct type if different)
+/** @type {import('eslint').Linter.ESLintConfig} */
+export default [
+  {
+    ignores: ['node_modules', 'dist', 'out'],
+  },
+  js.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
-        parser: tsParser,
-        ecmaVersion: "latest",
-        sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.es2021,
+      },
+      parser: tsParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
     },
-    // Custom rules
+    plugins: {
+      '@typescript-eslint': tsEslintPlugin,
+    },
     rules: {
-        "@typescript-eslint/explicit-member-accessibility": ["error", {
-            accessibility: "explicit",
-        }],
-        "@typescript-eslint/naming-convention": ["warn", {
-            selector: "import",
-            format: ["camelCase", "PascalCase"],
-        }],
-        curly: "warn",
-        eqeqeq: "warn",
-        "no-throw-literal": "warn",
-        semi: "warn",
+      ...tsEslintPlugin.configs.recommended.rules,
+      '@typescript-eslint/explicit-member-accessibility': [
+        'error',
+        {accessibility: 'explicit'},
+      ],
+      '@typescript-eslint/naming-convention': [
+        'warn',
+        {
+          selector: 'import',
+          format: ['camelCase', 'PascalCase'],
+        },
+      ],
+      curly: 'warn',
+      eqeqeq: 'warn',
+      'no-throw-literal': 'warn',
+      // Ensure a single blank line after the entire import block
+      'padding-line-between-statements': [
+        'error',
+        {blankLine: 'always', prev: 'import', next: '*'},
+        {blankLine: 'any', prev: 'import', next: 'import'},
+      ],
+      // Remove all other empty lines
+      'no-multiple-empty-lines': ['error', {max: 1, maxEOF: 0, maxBOF: 0}],
     },
-    // Ignore patterns
-    ignores: [
-        "node_modules/",
-        "dist/",
-        "out/",
-    ],
-}];
+  },
+];

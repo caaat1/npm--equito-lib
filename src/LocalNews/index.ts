@@ -4,6 +4,7 @@ import * as CallTrace from '../Call/Trace';
 import ClassParent from '../Class/Parent';
 import * as Console from '../Console';
 import * as ConstStr from '../Const/String';
+
 export default abstract class LocalNews extends globalThis.Error {
     public constructor(...args: string[]) {
         super(args.join(ConstStr.SPACE));

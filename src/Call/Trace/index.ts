@@ -14,15 +14,12 @@ export class Fields {
         public readonly line: string,
     ) {}
 }
-
 const names = new Fields(`column`, `file`, `func`, `line`);
 const patterns = new Fields(`\\d+`, `[^%s]+`, `[^(]+\\s`, `\\d+`);
-
 interface IPattern {
     file: string;
     locator(loc: string): string;
 }
-
 class RegExpSource extends String {
     public constructor(type: IPattern) {
         const groups: Fields = {
@@ -36,7 +33,6 @@ class RegExpSource extends String {
         super(`at ${func}?${type.locator(`${file}:${line}:${column}`)}`);
     }
 }
-
 export class Print extends String {
     public constructor(
         matches: Fields,
@@ -57,27 +53,23 @@ export class Print extends String {
         super(Hr.HALF + '\n'+ file + func + line + column + Hr.HALF);
     }
 }
-
 function ucfirst(word: string): string {
     if (word.length) {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
     return word;
 }
-
 export class Pattern extends RegExp {
     public constructor(variety: IPattern) {
         super(new RegExpSource(variety).toString());
     }
 }
-
 export const browser: IPattern = {
     file: `:`,
     locator(loc: string): string {
         return `@${loc}`;
     },
 };
-
 export const node: IPattern = {
     file: `)`,
     locator(loc: string): string {

@@ -1,4 +1,5 @@
 import * as Error from './Error';
+
 export default class Defined extends String {
     public constructor(stackTrace: string | undefined) {
         super(stackTrace);
