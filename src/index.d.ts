@@ -1,6 +1,7 @@
 import * as Console from './Console';
 import LocalNews from './LocalNews';
 import './types';
+
 declare module 'equito-library' {
   export class Col extends LocalNews {
     protected out(...args: Console.T[]): void;
