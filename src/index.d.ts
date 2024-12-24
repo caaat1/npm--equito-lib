@@ -12,3 +12,4 @@ declare module 'equito-library' {
 export const Col: typeof import('./LocalNews/Col').default;
 export const Row: typeof import('./LocalNews/Row').default;
 
+
