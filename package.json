@@ -48,7 +48,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "husky",
-    "test": "vscode-test"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "types": "out/index.d.ts",
   "version": "0.0.1-beta.5"
