@@ -1,7 +1,7 @@
 {
   "author": "equito",
   "bugs": {
-    "url": "https://github.com/caaat1/equito-lib/issues"
+    "url": "https://github.com/caaat1/npm--equito-lib/issues"
   },
   "dependencies": {
     "source-map-support": "latest"
@@ -24,7 +24,7 @@
   "files": [
     "out"
   ],
-  "homepage": "https://github.com/caaat1/equito-lib#readme",
+  "homepage": "https://github.com/caaat1/npm--equito-lib#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -40,16 +40,16 @@
     "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
   "main": "out/index.js",
-  "name": "equito-library",
+  "name": "equito-lib",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caaat1/equito-lib.git"
+    "url": "git+https://github.com/caaat1/npm--equito-lib.git"
   },
   "scripts": {
-    "lint": "echo 'Running ESLint' && eslint . --fix",
     "build": "tsc",
+    "lint": "echo 'Running ESLint' && eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "types": "out/index.d.ts",
-  "version": "0.0.1-beta.5"
+  "version": "0.0.1-beta.11"
 }

@@ -1,6 +1,23 @@
 {
-    "cSpell.words": [
-        "tseslint",
-        "ucfirst"
-    ],
+  "cSpell.words": ["nodenext", "tseslint", "ucfirst"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#cdc88e",
+    "activityBar.background": "#cdc88e",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#3b857f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#cdc88e",
+    "statusBar.background": "#bdb76b",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#a9a34c",
+    "statusBarItem.remoteBackground": "#bdb76b",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#bdb76b",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#bdb76b99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "DarkKhaki"
 }
