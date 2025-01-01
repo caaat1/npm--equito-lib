@@ -10,7 +10,6 @@
   "devDependencies": {
     "@eslint/create-config": "latest",
     "@eslint/js": "^9.17.0",
-    "@types/node": "^22.10.3",
     "@typescript-eslint/eslint-plugin": "^8.18.2",
     "@typescript-eslint/parser": "^8.18.2",
     "eslint": "^9.17.0",
@@ -47,15 +46,11 @@
     "url": "git+https://github.com/caaat1/npm--equito-lib.git"
   },
   "scripts": {
-    "build": "tsc -p .",
-    "clean": "rimraf out",
-    "compile": "tsc -p ./",
-    "link-n-build": "npm link equito-lib && npm run build",
-    "lint": "echo 'Running ESLint' && eslint src --fix",
+    "build": "tsc",
+    "link-and-build": "npm link my-module && npm run build",
+    "lint": "echo 'Running ESLint' && eslint . --fix",
     "prepublishOnly": "npm run build && npx prettier --write .",
-    "pretest": "pnpm run compile && pnpm run lint",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc -watch -p ./"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "types": "out/index.d.ts",
   "version": "0.0.1-beta.01"

@@ -13,26 +13,26 @@ export const SPACE: string = ' ';
 export const TAB: string = '\t';
 export const UNDERSCORE: string = '_';
 export const Wrap: Record<string, (str: string) => string> = {
-    angle(str: string): string {
-        return `<${str}>`;
-    },
-    square(str: string): string {
-        return `[${str}]`;
-    },
-    curly(str: string): string {
-        return `{${str}}`;
-    },
-    parens(str: string): string {
-        return `(${str})`;
-    },
-    singleQuote(str: string): string {
-        return `'${str}'`;
-    },
-    doubleQuote(str: string): string {
-        return `"${str}"`;
-    },
-    backtick(str: string): string {
-        return `\`${str}\``;
-    },
+  angle(str: string): string {
+    return `<${str}>`;
+  },
+  square(str: string): string {
+    return `[${str}]`;
+  },
+  curly(str: string): string {
+    return `{${str}}`;
+  },
+  parens(str: string): string {
+    return `(${str})`;
+  },
+  singleQuote(str: string): string {
+    return `'${str}'`;
+  },
+  doubleQuote(str: string): string {
+    return `"${str}"`;
+  },
+  backtick(str: string): string {
+    return `\`${str}\``;
+  },
 };
 // Add more wrapping methods as needed...

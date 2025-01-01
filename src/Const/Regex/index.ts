@@ -10,7 +10,7 @@ export const Wrap: Record<string, (str: string, ...args: string[]) => string> =
       }
       return `(${str})`;
     },
-    parens(str: string): string {
+    parenthesize(str: string): string {
       return `\\(${str}\\)`;
     },
     // Add more wrapping methods as needed...
