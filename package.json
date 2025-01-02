@@ -47,13 +47,17 @@
     "url": "git+https://github.com/caaat1/npm--equito-lib.git"
   },
   "scripts": {
-    "build": "tsc -p .",
+    "build": "npm run compile",
     "clean": "rimraf out",
     "compile": "tsc -p ./",
+    "git-add": "git add ./",
+    "git-commit": "git commit -m \"Prepare for release\"",
+    "git-default": "npm run git-add && npm run git-commit && npm run git-push",
+    "git-push": "git push",
     "link-n-build": "npm link equito-lib && npm run build",
     "lint": "echo 'Running ESLint' && eslint src --fix",
-    "prepublishOnly": "npm run build && npx prettier --write .",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "prepublishOnly": "npm run build && npx prettier --write ./ && npm run git-default",
+    "pretest": "npm run compile && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "tsc -watch -p ./"
   },

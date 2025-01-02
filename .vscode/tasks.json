@@ -1,42 +1,10 @@
 {
   "tasks": [
     {
-      "label": "clean",
-      "problemMatcher": [],
-      "script": "clean",
-      "type": "npm"
-    },
-    {
-      "dependsOn": "clean",
-      "group": {
-        "isDefault": true,
-        "kind": "build"
-      },
-      "label": "build",
-      "problemMatcher": "$tsc",
-      "script": "build",
-      "type": "npm"
-    },
-    {
-      "dependsOn": ["clean", "build"],
-      "label": "pre-debug",
-      "problemMatcher": []
-    },
-    {
-      "group": {
-        "isDefault": false,
-        "kind": "build"
-      },
-      "isBackground": true,
-      "label": "npm: watch - Typescript",
-      "presentation": {
-        "panel": "shared",
-        "reveal": "never",
-        "showReuseMessage": false
-      },
-      "problemMatcher": ["$tsc-watch"],
-      "script": "watch",
-      "type": "npm"
+      "label": "tsc: build - tsconfig.json",
+      "problemMatcher": ["$tsc"],
+      "tsconfig": "tsconfig.json",
+      "type": "typescript"
     }
   ],
   "version": "2.0.0"

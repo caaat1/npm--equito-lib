@@ -21,20 +21,14 @@
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "latest"
   },
-  "files": [
-    "out"
-  ],
+  "files": ["out"],
   "homepage": "https://github.com/caaat1/npm--equito-lib#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
-  "keywords": [
-    "helper",
-    "lib",
-    "library"
-  ],
+  "keywords": ["helper", "lib", "library"],
   "license": "ISC",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix"
@@ -47,7 +41,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "link-and-build": "npm link my-module && npm run build",
+    "link-and-build": "npm link equito-lib && npm run build",
     "lint": "echo 'Running ESLint' && eslint . --fix",
     "prepublishOnly": "npm run build && npx prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 0"
