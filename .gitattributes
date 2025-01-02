@@ -9,3 +9,5 @@
 # Denote all the binary files
 *.png binary
 *.jpg binary
+
+package.json text eol=lf
