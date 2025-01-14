@@ -1,6 +1,10 @@
 {
   "tasks": [
     {
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
       "label": "tsc: build - tsconfig.json",
       "problemMatcher": ["$tsc"],
       "tsconfig": "tsconfig.json",

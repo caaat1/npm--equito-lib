@@ -22,6 +22,12 @@
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "latest"
   },
+  "exports": {
+    ".": {
+      "import": "./out/index.js",
+      "require": "./out/index.js"
+    }
+  },
   "files": [
     "out"
   ],
@@ -31,6 +37,7 @@
       "pre-commit": "lint-staged"
     }
   },
+  "imports": {},
   "keywords": [
     "helper",
     "lib",
@@ -42,25 +49,32 @@
   },
   "main": "out/index.js",
   "name": "equito-lib",
+  "packageManager": "npm@11.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caaat1/npm--equito-lib.git"
   },
   "scripts": {
     "build": "npm run compile",
-    "clean": "rimraf out",
+    "clean": "npm run clean:out",
+    "clean:out": "rimraf out",
     "compile": "tsc -p ./",
-    "git-add": "git add ./",
-    "git-commit": "git commit -m \"Prepare for release\"",
-    "git-default": "npm run git-add && npm run git-commit && npm run git-push",
-    "git-push": "git push",
-    "link-n-build": "npm link equito-lib && npm run build",
-    "lint": "echo 'Running ESLint' && eslint src --fix",
-    "prepublishOnly": "npm run build && npx prettier --write ./ && npm run git-default",
-    "pretest": "npm run compile && npm run lint",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "git": "npm run git:add && npm run git:commit && npm run git:push",
+    "git:add": "git add ./",
+    "git:commit": "git commit -m \"Prepare for release\" || echo 'No changes to commit'",
+    "git:push": "git push",
+    "link": "npm link equito-lib",
+    "link:n-build": "npm run link && npm run build",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "echo 'Running ESLint' && eslint . --fix",
+    "prepare": "npm run build && npm run lint && npm run prettier",
+    "prepublishOnly": "npm run build && npm run lint && npm run prettier && npm run git",
+    "prettier": "npx prettier --write .",
+    "test": "npm run test:none",
+    "test:none": "echo \"Error: no test specified\" && exit 0",
     "watch": "tsc -watch -p ./"
   },
+  "type": "commonjs",
   "types": "out/index.d.ts",
-  "version": "0.0.1-beta.3"
+  "version": "0.0.1-beta.6"
 }
