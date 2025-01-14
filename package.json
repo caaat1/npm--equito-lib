@@ -76,5 +76,5 @@
   },
   "type": "commonjs",
   "types": "out/index.d.ts",
-  "version": "0.0.1-beta.6"
+  "version": "0.0.1"
 }
