@@ -1,6 +1,6 @@
 import * as Console from './Console';
 import LocalNews from './LocalNews';
-import './types';
+import './types/types';
 
 declare module 'equito-library' {
   export class Col extends LocalNews {

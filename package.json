@@ -3,24 +3,23 @@
   "bugs": {
     "url": "https://github.com/caaat1/npm--equito-lib/issues"
   },
-  "dependencies": {
-    "source-map-support": "latest"
-  },
   "description": "A library of helper constants and classes",
   "devDependencies": {
-    "@eslint/create-config": "latest",
-    "@eslint/js": "^9.17.0",
-    "@types/node": "^22.10.3",
-    "@typescript-eslint/eslint-plugin": "^8.18.2",
-    "@typescript-eslint/parser": "^8.18.2",
-    "eslint": "^9.17.0",
+    "@eslint/create-config": "1.4.0",
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.6",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^9.18.0",
     "eslint-plugin-import": "^2.31.0",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "typescript": "latest"
+    "rimraf": "^6.0.1",
+    "source-map-support": "^0.5.21",
+    "typescript": "^5.7.3"
   },
   "exports": {
     ".": {
@@ -37,7 +36,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "imports": {},
   "keywords": [
     "helper",
     "lib",
@@ -55,26 +53,23 @@
     "url": "git+https://github.com/caaat1/npm--equito-lib.git"
   },
   "scripts": {
-    "build": "npm run compile",
-    "clean": "npm run clean:out",
-    "clean:out": "rimraf out",
+    "build": "npm run clean && npm run lint && npm run prettier && npm run compile",
+    "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "git": "npm run git:add && npm run git:commit && npm run git:push",
     "git:add": "git add ./",
     "git:commit": "git commit -m \"Prepare for release\" || echo 'No changes to commit'",
     "git:push": "git push",
     "link": "npm link equito-lib",
-    "link:n-build": "npm run link && npm run build",
-    "lint": "npm run lint:eslint",
-    "lint:eslint": "echo 'Running ESLint' && eslint . --fix",
-    "prepare": "npm run build && npm run lint && npm run prettier",
-    "prepublishOnly": "npm run build && npm run lint && npm run prettier && npm run git",
-    "prettier": "npx prettier --write .",
-    "test": "npm run test:none",
-    "test:none": "echo \"Error: no test specified\" && exit 0",
+    "link-and-prepare": "npm run link && npm run prepare",
+    "lint": "eslint . --fix",
+    "postpublish": "npm run git",
+    "prepare": "npm run build",
+    "prettier": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "watch": "tsc -watch -p ./"
   },
   "type": "commonjs",
   "types": "out/index.d.ts",
-  "version": "0.0.1"
+  "version": "0.0.1-beta.7"
 }
