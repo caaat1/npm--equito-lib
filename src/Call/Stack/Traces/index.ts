@@ -12,13 +12,17 @@ export default class Traces extends globalThis.Array<string> {
   public getMatches(patterns: Pattern[]): Fields {
     for (const trace of this) {
       for (const variety of patterns) {
-        const groups = trace.match(variety)?.groups;
+        const groups:
+          | {
+              [key: string]: string;
+            }
+          | undefined = trace.match(variety)?.groups;
         if (groups) {
-          if (groups['file']) {
-            groups['file'] = groups['file'].replace(Regex.BACKSLASH, Str.SLASH);
-          }
-          const {file = '', func = '', line = '', column = ''} = groups;
-          return {file, func, line, column};
+          const fields = groups as Fields;
+          return {
+            ...fields,
+            file: fields['file'].replace(Regex.BACKSLASH, Str.SLASH),
+          };
         }
       }
     }
