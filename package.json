@@ -62,7 +62,7 @@
     "git:push": "git push",
     "link": "npm link equito-lib",
     "link-and-prepare": "npm run link && npm run prepare",
-    "lint": "eslint . --fix",
+    "lint": "eslint ./src --fix",
     "postpublish": "npm run git",
     "prepare": "npm run build",
     "prettier": "prettier --write .",
@@ -70,6 +70,6 @@
     "watch": "tsc -watch -p ./"
   },
   "type": "commonjs",
-  "types": "out/index.d.ts",
-  "version": "0.0.1-beta.7"
+  "types": "out/types/index.d.ts",
+  "version": "0.0.1-beta.8"
 }
