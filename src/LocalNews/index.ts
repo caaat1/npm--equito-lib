@@ -17,23 +17,19 @@ export default abstract class LocalNews extends globalThis.Error {
         ? ClassParent.getCompositeConstructorName(this)
         : ConstString.EMPTY;
   }
-  public print(...args: Console.T[]): this {
+  public out(...args: Console.T[]): this {
     new Console.GroupCollapsed(this.toString()).log(() => {
       Console.Log.col(
         new CallTracePrint(
           new CallStackTraces(
             new CallStackDefinedPopulated(this.stack)
-          ).getMatches(
-            new CallTracePattern(jsGlobal),
-            new CallTracePattern(browser),
-            new CallTracePattern(node)
-          )
+          ).getMatches(CallTracePattern.new(jsGlobal, browser, node))
         ).toString()
       )
-        .void(this.out(...args))
+        .void(this.log(args))
         .col(ConstString.HR);
     });
     return this;
   }
-  protected abstract out(...args: Console.T[]): void;
+  protected abstract log(args: Console.T[]): void;
 }

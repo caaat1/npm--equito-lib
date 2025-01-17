@@ -31,5 +31,5 @@ export default abstract class Parent {
   }
 }
 class Error extends globalThis.Error {
-  public message = `No parent class found`;
+  public override message = `No parent class found`;
 }

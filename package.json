@@ -61,10 +61,10 @@
     "git:commit": "git commit -m \"Prepare for release\" || echo 'No changes to commit'",
     "git:push": "git push",
     "link": "npm link equito-lib",
-    "link-and-prepare": "npm run link && npm run prepare",
     "lint": "eslint ./src --fix",
     "postpublish": "npm run git",
     "prepare": "npm run build",
+    "prepare-n-link": "npm run prepare && npm run link",
     "prettier": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 0",
     "watch": "tsc -watch -p ./"

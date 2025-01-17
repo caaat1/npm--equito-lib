@@ -1,3 +1,3 @@
 export class Matches extends globalThis.Error {
-  public message = `Stack trace does not match`;
+  public override message = `Stack trace does not match`;
 }

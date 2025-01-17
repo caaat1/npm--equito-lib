@@ -6,7 +6,9 @@ export const Wrap: Record<string, (str: string, ...args: string[]) => string> =
   {
     group(str: string, name?: string): string {
       if (name) {
-        str = `?${Str.Wrap.angle(name)}${str}`;
+        if (Str.Wrap && Str.Wrap['angle']) {
+          str = `?${Str.Wrap['angle'](name)}${str}`;
+        }
       }
       return `(${str})`;
     },

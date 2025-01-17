@@ -17,11 +17,13 @@ export default class Print extends String {
       file: pathFormatter.format(matches.file),
     };
     for (const key in matches) {
-      matches[key] =
-        ucfirst(names[key].toLowerCase()) +
-        ConstStringColon.SPACE +
-        matches[key] +
-        ConstString.NEW_LINE;
+      if (names[key]) {
+        matches[key] =
+          ucfirst(names[key].toLowerCase()) +
+          ConstStringColon.SPACE +
+          matches[key] +
+          ConstString.NEW_LINE;
+      }
     }
     const {file, func, line, column} = matches;
     super(

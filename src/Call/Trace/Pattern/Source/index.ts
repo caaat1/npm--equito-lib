@@ -11,7 +11,11 @@ export default class Source extends String {
       file: patterns.file.replace(`%s`, type.file),
     };
     for (const key in groups) {
-      groups[key] = Regex.Wrap.group(groups[key], key);
+      if (Regex.Wrap['group']) {
+        if (groups[key] !== undefined) {
+          groups[key] = Regex.Wrap['group'](groups[key] as string, key);
+        }
+      }
     }
     const {file, func, line, column} = groups;
     super(

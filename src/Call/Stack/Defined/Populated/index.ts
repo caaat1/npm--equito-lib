@@ -3,10 +3,10 @@ import * as Str from '../../../../Const/String';
 import * as Error from './Error';
 
 export default class Populated extends Defined {
-  protected isNot(stackTrace: string | undefined): boolean {
+  protected override isNot(stackTrace: string | undefined): boolean {
     return Str.EMPTY === stackTrace;
   }
-  protected throwError() {
+  protected override throwError() {
     throw new Error.Empty();
   }
 }

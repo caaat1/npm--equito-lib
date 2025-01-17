@@ -1,3 +1,3 @@
 export class Undefined extends globalThis.Error {
-  public message = `Stack is undefined`;
+  public override message = `Stack is undefined`;
 }
