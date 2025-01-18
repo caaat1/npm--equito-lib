@@ -37,8 +37,8 @@ export default abstract class LocalNews extends globalThis.Error {
   private async getFileTimestamps(): Promise<string> {
     try {
       const stats = await fs.stat(__filename);
-      return stats.birthtime.toString();
-      // return stats.mtime;
+      // return stats.birthtime.toString();
+      return stats.mtime.toString();
     } catch (error: unknown) {
       if (error instanceof Error) {
         return `Error accessing file statistics: ${error.toString()}`;
